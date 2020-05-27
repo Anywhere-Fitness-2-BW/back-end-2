@@ -49,7 +49,7 @@ exports.seed = function(knex) {
           arrivalDescription: 'Sign in on the sign in sheet and then go to room B on the left side of the hall.',
           additionalInfo: null,
           cost: 9.99,
-          courseDescription: null,
+          courseDescription: '',
           address: '8585 Willmer St. Magnolia, OH 96785',
           startDate: '06-10-2020'
         },

@@ -46,6 +46,7 @@ exports.up = function (knex) {
 
         table.text("equipmentRequired");
         table.text("arrivalDescription");
+        table.text("additionalInfo");
         table.double("cost").notNullable();
         table.text("courseDescription").notNullable();
         table.text("address").notNullable();
