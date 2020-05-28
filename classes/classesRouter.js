@@ -53,7 +53,7 @@ router.post("/", validateNewClass, async (req, res) => {
   try {
     let instructor = req.body.instructor;
     let days = [];
-    for (let i = 0; i < req.body.days.length; i++) {
+    for (let i = 0; i < req.body.days; i++) {
       days.push(req.body.days[i]);
     }
 
@@ -183,8 +183,7 @@ function validateNewClass(req, res, next) {
     body.intensity ||
     body.location ||
     body.maxSize ||
-    body.classType ||
-    body.imgUrl
+    body.classType
   ) {
     next();
   } else {

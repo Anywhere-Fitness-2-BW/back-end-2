@@ -22,9 +22,9 @@ router.post('/register', validateRegisterBody, (req, res) => {
        gender: req.body.gender ? req.body.gender : 'none'
    })
    .then(async id => {
-       for(let i=0; i<req.body.roles.length; i++){
+       for(let i=0; i<req.body.role.length; i++){
             let roleId;
-            if(req.body.roles[i] === 'instructor'){
+            if(req.body.role[i] === 'instructor'){
                 roleId = 1;
             }else{
                 roleId = 2;
@@ -77,7 +77,7 @@ router.post('/login', validateLoginBody, validateRole, (req, res) => {
 })
 
 function validateRegisterBody(req, res, next){
-    const {username, password, roles, email} = req.body;
+    const {username, password, role, email} = req.body;
     User.getByUsername(req.body.username)
     .then(user=> {
         // Look for a duplicate username
@@ -86,7 +86,7 @@ function validateRegisterBody(req, res, next){
                 message: 'Username already exists'
             })
         }else{
-            if(!username || !password || !roles || !email){
+            if(!username || !password || !role || !email){
                 res.status(401).json({
                     message: 'Missing field',
                 })
