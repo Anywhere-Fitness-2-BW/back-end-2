@@ -18,7 +18,6 @@ router.get("/", async (req, res) => {
       classList[i] = {
         ...classList[i],
         instructor: instructor[0].displayName,
-        imgUrl: imgUrl[0].url,
         classType: classType[0].type,
         days,
       };
@@ -43,7 +42,6 @@ router.get("/:id", async (req, res) => {
     res.status(200).json({
       ...foundClass[0],
       instructor: instructor[0].displayName,
-      imgUrl: imgUrl[0].url,
       classType: classType[0].type,
       days,
     });
