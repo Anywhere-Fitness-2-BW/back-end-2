@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
     let classList = await Class.getClasses();
     for (let i = 0; i < classList.length; i++) {
       let instructor = await Class.getClassInstructor(classList[i].id);
-      let imgUrl = await Class.getImgUrl(classList[i].imgUrl);
       let classType = await Class.getClassType(classList[i].classType);
       let foundDays = await Class.getDays(classList[i].id);
       let days = [];
