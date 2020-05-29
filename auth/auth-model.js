@@ -1,6 +1,6 @@
 const knex = require('../data/dbConfig');
 
-const usersDB = require('../users/users-model');
+const usersDB = require('../users/usersModel');
 
 module.exports = {
     get: usersDB.get,

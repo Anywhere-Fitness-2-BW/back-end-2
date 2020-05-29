@@ -2,6 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
+const usersRouter = require("../users/usersRouter");
+const authRouter = require("../auth/auth-router");
+const classesRouter = require("../classes/classesRouter");
+const clientRouter = require('../auth/client-router');
+const restricted = require("../auth/restricted-middleware");
+const instructor = require("../auth/instructor-only");
+
 const server = express();
 
 server.use(express.json());

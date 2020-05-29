@@ -9,7 +9,7 @@ module.exports = {
   addClass,
   addUserToClass,
   removeClass,
-  removdeUserFromClass,
+  removeUserFromClass,
   removeClassesByInstructor,
   updateClassUses,
   editClass
@@ -104,7 +104,7 @@ function addUserToClass(classId, user_id) {
       });
     });
 }
-function removdeUserFromClass(classId, user_id) {
+function removeUserFromClass(classId, user_id) {
   return db("users_classes")
     .where({ class_id: classId, user_id: user_id })
     .first()
