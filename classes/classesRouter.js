@@ -61,7 +61,7 @@ router.post("/add/:id", restricted, (req, res) => {
   //////REMOVE USER from class by Class ID
 router.delete("/remove/:id", restricted, (req, res) => {
     classes
-      .removdeUserFromClass(req.params.id, req.decodedJwt.subject)
+      .removeUserFromClass(req.params.id, req.decodedJwt.subject)
       .then(classes => {
         res.status(200).json(classes);
       })
